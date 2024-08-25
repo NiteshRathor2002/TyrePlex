@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="x-icon" href="favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login or Sign Up</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+   <style>
+    .login-container {
+      background-color: #f7f8fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    .otp-container {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<!------Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container-fluid ps-lg-3 pe-lg-3">
+      <!-- Logo -->
+      <a class="navbar-brand ms-5" href="#">
+        <img src="images/TP-logo.webp" alt="Logo" >
+      </a>
+
+      <!-- Toggle button for mobile view -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar items -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+          <!-- Dropdown menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Car Types
+            </a>
+            <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                <li class="dropdown-item text-light-50">Popular car Tyre brands</li>
+              <li><a class="dropdown-item fw-bold" href="#">MRF Tyres</a></li>
+              <li><a class="dropdown-item fw-bold" href="#">CEAT Tyres </a></li>
+              <li><a class="dropdown-item fw-bold" href="#">Goodyear Tyres</a></li>
+              <li><a class="dropdown-item fw-bold" href="#">Apollo Tyres</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Bike Types
+            </a>
+            <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                <li class="dropdown-item text-light-50">Popular Bike Tyre brands</li>
+              <li><a class="dropdown-item fw-bold" href="#">MRF Tyres</a></li>
+              <li><a class="dropdown-item fw-bold" href="#">CEAT Tyres </a></li>
+              <li><a class="dropdown-item fw-bold" href="#">Goodyear Tyres</a></li>
+              <li><a class="dropdown-item fw-bold" href="#">Apollo Tyres</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Commercial
+            </a>
+            <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item fw-bold" href="#">All Commercial Types</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Accessories
+            </a>
+            <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item fw-bold" href="#">Accessories</a></li>
+              <li><a class="dropdown-item fw-bold" href="#">Batteries</a></li>
+              <li><a class="dropdown-item fw-bold" href="#">Alloy Wheels</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown me-2">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item fw-bold" href="#">Cashback offer</a></li>
+              <li><a class="dropdown-item fw-bold" href="#">Find Tyre Dealers</a></li>
+              <li><a class="dropdown-item fw-bold" href="#">Compare Tyres</a></li>
+            </ul>
+          </li>
+         
+          <!-- Login icon -->
+          <li class="nav-item me-5">
+            <a class="nav-link" href="login-ssignup.html" onclick="loginpage()">
+                <i class="fa-solid fa-user me-2"></i><span class="">Login</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Main Container -->
+ <div class="login-container">
+    <div class="form-container">
+        <h4>Login or Signup</h4>
+        <form id="auth-form">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" class="form-control" id="phone" placeholder="Enter phone number" required>
+          </div>
+          <p class="text-secondary mt-2">Your details are safe with us.</p>
+          <p class="text-secondary">* By proceeding ahead you expressly agree to Terms of Cookie use & Privacy Policy.
+        </p>
+
+          <div class="otp-container" id="otp-container">
+            <div class="form-group">
+              <label for="otp">Enter OTP</label>
+              <input type="text" class="form-control mb-2" id="otp" placeholder="Enter OTP" required>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" id="get-otp-btn">Get OTP</button>
+          <button type="submit" class="btn btn-primary" id="verify-otp-btn" style="display: none;">Verify OTP</button>
+        </form>
+      </div>
+ </div>
+
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <script> // Handle Get OTP button click
+    document.getElementById('get-otp-btn').addEventListener('click', function() {
+      const phoneNumber = document.getElementById('phone').value;
+      
+      if (phoneNumber) {
+        // Simulate OTP sending process
+        document.getElementById('otp-container').style.display = 'block';
+        document.getElementById('get-otp-btn').style.display = 'none';
+        document.getElementById('verify-otp-btn').style.display = 'block';
+      }
+    });
+  
+    // Handle OTP verification and redirect to home page
+    document.getElementById('auth-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const otp = document.getElementById('otp').value;
+      
+      if (otp) {
+        // Simulate OTP verification (you would verify this against your backend)
+        window.location.href = 'index.html';
+      }
+    });</script>
+</body>
+</html>
